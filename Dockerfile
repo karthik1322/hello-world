@@ -1,7 +1,5 @@
 # Pull base image 
 From tomcat:8-jre8 
-
-# Maintainer 
-MAINTAINER "saikrthk17@gmail.com" 
-COPY ./webapp.war /usr/local/tomcat/webapps
-
+Expose 8080
+ADD target/webapp.war webapp.war
+ENTRYPOINT ["java, ".war", "/webapp.war" ]
