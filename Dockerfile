@@ -1,8 +1,10 @@
-# Pull tomcat latest image from dockerhub 
-From tomcat:latest
+FROM openjdk:8-jdk-alpine
 
-# Maintainer
-MAINTAINER "AR Shankar" 
+VOLUME /tmp
+RUN mkdir -p /logs
+RUN mkdir scripts
+RUN chmod 777 /logs
+EXPOSE 8080
 
-# copy war file on to container 
-COPY ./webapp.war /usr/local/tomcat/webapps
+ADD target/*.war hello-world.war
+ENTRYPOINT ["java","-war","hellow-world.war"]
