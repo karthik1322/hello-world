@@ -10,9 +10,11 @@ pipeline{
   
       }
       stage("sonarscanner"){
+          steps{
+              withSonarQubeEnv(credentialsId: 'sonaruser')
+          }
 
-          withSonarQubeEnv(credentialsId: 'sonaruser') {
-    }
+       
       }
     }
 }
