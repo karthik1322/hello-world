@@ -6,5 +6,5 @@ RUN mkdir scripts
 RUN chmod 777 /logs
 EXPOSE 8080
 
-ADD target/*.war hello-world.war
-ENTRYPOINT ["java","-war","hellow-world.war"]
+ADD /var/lib/jenkins/workspace/bew/webapp/target/webapp.war hello-world.war
+
