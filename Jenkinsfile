@@ -9,7 +9,10 @@ pipeline{
         }
         stage ('Build') {
             steps {
-                sh 'mvn clean install package' 
+
+               withMaven(jdk: 'JAVA_HOME', maven: 'MAVEN') {
+                   sh "mvn clean install package"
+                    }
             }
       }
       
