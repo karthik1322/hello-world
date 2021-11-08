@@ -19,7 +19,7 @@ pipeline{
 
                withMaven(jdk: 'JAVA_HOME', maven: 'MAVEN') {
                    sh "mvn clean  package"
-                   
+                   sh "pwd"
 
 
                     }
