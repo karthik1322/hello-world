@@ -1,4 +1,11 @@
 pipeline{
+    environment { 
+
+        registry = "saikrthk17/fresh" 
+        registryCredential = 'dockerhub_id' 
+        dockerImage = '' 
+    }
+
     agent any
         stages{
         stage("check out scm"){
@@ -17,7 +24,11 @@ pipeline{
         }
             stage ('Build docker image') {
             steps {
-              sh "docker build -t newimage ."
+              
+                script { 
+
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER" 
+                }
                     }
             }
       }
