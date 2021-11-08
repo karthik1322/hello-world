@@ -18,8 +18,8 @@ pipeline{
             steps {
 
                withMaven(jdk: 'JAVA_HOME', maven: 'MAVEN') {
-                   sh "mvn clean install package"
-                   sh "cp *.war /opt/docker/"
+                   sh "mvn clean  package"
+                   
 
 
                     }
