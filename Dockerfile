@@ -1,4 +1,4 @@
 FROM openjdk:8-jdk-alpine
-ADD target/*.war hellow-world.war
+ADD /var/lib/jenkins/workspace/bew/webapp/target/*.war hellow-world.war
 
 
